@@ -1,0 +1,8 @@
+{
+    "name": "Niggalaz chat",
+    "short_name": "NigChat",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#4080BF",
+    "theme_color": "#2F3BA2"
+}

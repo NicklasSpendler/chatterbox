@@ -18,32 +18,22 @@
 	</nav>
 
 	<article class="mainChatView">
-		<p class="mainChatView__me"><span class="mainChatView__name">Brian</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__other"><span class="mainChatView__name">Egon</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__me"><span class="mainChatView__name">Brian</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__other"><span class="mainChatView__name">Egon</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__me"><span class="mainChatView__name">Brian</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__other"><span class="mainChatView__name">Egon</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__me"><span class="mainChatView__name">Brian</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__other"><span class="mainChatView__name">Egon</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__me"><span class="mainChatView__name">Brian</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__other"><span class="mainChatView__name">Egon</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__me"><span class="mainChatView__name">Brian</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__other"><span class="mainChatView__name">Egon</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__me"><span class="mainChatView__name">Brian</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__other"><span class="mainChatView__name">Egon</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__me"><span class="mainChatView__name">Brian</span> Wazzaaaaaaa!?</p>
-		<p class="mainChatView__other"><span class="mainChatView__name">Egon</span> Wazzaaaaaaa!?</p>
+
 	</article>
 
 	<article class="chatMessage">
-		<input type="text" class="chatMessage__input" placeholder="What's on your mind?">
-		<button class="chatMessage__button">Send</button>
+		<form class="chatMessage__form">
+			<input type="text" class="chatMessage__input" name="message" placeholder="What's on your mind?">
+			<button class="chatMessage__button">Send</button>
+		</form>
+		<form class="chatMessage__usernameForm">
+			<input type="text" class="chatMessage__username" name="username" placeholder="What's your username?">
+			<button class="chatMessage__join">Join</button>
+		</form>
 	</article>
 
 	<script src="/socket.io/socket.io.js"></script>
-	<script>
-		var socket = io();
-	</script>
+	
+	<script src="assets/js/script.js"></script>
 </body>
 </html>
