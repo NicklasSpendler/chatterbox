@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Chatterbox</title>
 
+	<link rel="manifest" href="/manifest.json">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Chat :)">
+
+	<meta name="description" content="Nigzaas chat">
+	<meta name="theme-color" content="#2F3BA2" />
+
 	<link rel="stylesheet" href="/assets/css/style.css">
 </head>
+
 <body>
-	
+
 	<nav>
 		<a href="/" class="siteBrand">
 			<img src="/assets/images/catter.svg" alt="Chatterbox logo" class="siteBrand__logo">
@@ -32,8 +43,20 @@
 		</form>
 	</article>
 
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js')
+					.then((reg) => {
+						console.log('Service worker registered.', reg);
+					});
+			});
+		}
+	</script>
+
 	<script src="/socket.io/socket.io.js"></script>
-	
+
 	<script src="assets/js/script.js"></script>
 </body>
+
 </html>
