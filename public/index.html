@@ -16,6 +16,8 @@
 	<meta name="description" content="Nigzaas chat">
 	<meta name="theme-color" content="#2F3BA2" />
 
+	<link rel="shortcut icon" href="/assets/images/icons/catter152x152.png" type="image/x-icon">
+
 	<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
@@ -26,6 +28,7 @@
 			<img src="/assets/images/catter.svg" alt="Chatterbox logo" class="siteBrand__logo">
 			Chatterbox
 		</a>
+		<button id="butInstall" aria-label="Install" hidden><img src="/assets/images/install.svg"></button>
 	</nav>
 
 	<article class="mainChatView">
@@ -49,10 +52,13 @@
 				navigator.serviceWorker.register('/service-worker.js')
 					.then((reg) => {
 						console.log('Service worker registered.', reg);
-					});
+					})
+					.catch(err => console.log('', err));
 			});
 		}
 	</script>
+
+	<script src="assets/js/install.js"></script>
 
 	<script src="/socket.io/socket.io.js"></script>
 

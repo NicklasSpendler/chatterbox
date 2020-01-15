@@ -1,27 +1,9 @@
-const cacheVersion = 'v3';
+const cacheVersion = 'cachedPage';
 
-const cachePages = [
-    '/index.html',
-    '/assets/js/script.js',
-    '/assets/css/style.css',
-    '/assets/images/catter.png',
-    '/assets/images/catter.svg',
-    '/assets/media/lyd.mp3'
-]
-;
 
 // Call install event;
 // Activation happens when reloading pages
 self.addEventListener('install',(e)=>{
-    console.log('Service worker is installed', )
-
-    e.waitUntil(
-        caches.open(cacheVersion)
-            .then((cache)=>{
-                cache.addAll(cachePages)
-            })
-            .then(()=> self.skipWaiting())
-    );
 });
 
 // Happens when installed
@@ -43,10 +25,20 @@ self.addEventListener('activate',(e)=>{
 });
 
 // Call Fetch Event
-// Fetches happens you are offline
 self.addEventListener('fetch',(e)=>{
     console.log('Service worker fetching', );
     e.respondWith(
-        fetch(e.request).catch(()=> caches.match(e.request))
+        fetch(e.request)
+        .then(res => {
+            // Copy clone of repsonse
+            const resClone = res.clone();
+            caches
+                .open(cacheVersion)
+                .then(cache => {
+                    // Add repsonse to cache
+                    cache.put(e.request, resClone)
+                })
+            return res;
+        }).catch(err => caches.match(e.request).then(res => res))
     )
 });

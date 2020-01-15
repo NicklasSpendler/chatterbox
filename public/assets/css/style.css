@@ -98,3 +98,8 @@ body {
 	color: grey;
 	text-align: center;
 }
+
+#butInstall {
+	background: none;
+	border: none;
+}
