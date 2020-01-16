@@ -1,4 +1,4 @@
-const cacheVersion = 'cachedPage';
+const cacheVersion = 'v1';
 
 
 // Call install event;

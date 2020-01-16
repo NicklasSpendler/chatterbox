@@ -13,7 +13,7 @@ const cachePages = [
 // Call install event;
 // Activation happens when reloading pages
 self.addEventListener('install',(e)=>{
-    console.log('Service worker is installed', )
+    console.log('Service worker is installed')
 
     e.waitUntil(
         caches.open(cacheVersion)
